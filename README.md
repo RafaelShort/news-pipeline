@@ -21,6 +21,7 @@ de busca inteligente com classificação de tópicos, entidades e sumarização 
 ![TailwindCSS](https://img.shields.io/badge/Tailwind-3-06B6D4?logo=tailwindcss&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
+
 </div>
 
 ---
@@ -30,9 +31,9 @@ de busca inteligente com classificação de tópicos, entidades e sumarização 
 - **Coleta automática** de feeds RSS em intervalo configurável
 - **Fila de mensagens** com Apache Kafka
 - **Enriquecimento com IA:**
-  - Reconhecimento de entidades (NER)
-  - Classificação de tópicos
-  - Sumarização automática de artigos
+  - Reconhecimento de entidades nomeadas com **spaCy**
+  - Classificação de tópicos via **zero-shot** com HuggingFace Transformers
+  - Sumarização automática de artigos com **DistilBART / T5**
 - **Busca full-text** com Elasticsearch
 - **Filtros por facetas** (fonte, tópico, idioma, data)
 - **Interface web** moderna com React e Tailwind CSS
@@ -41,19 +42,25 @@ de busca inteligente com classificação de tópicos, entidades e sumarização 
 
 ## Tecnologias
 
+### NLP / IA
+| Tecnologia | Uso |
+|---|---|
+| spaCy | Reconhecimento de entidades nomeadas (NER) |
+| HuggingFace Transformers | Classificação zero-shot de tópicos |
+| HuggingFace Transformers | Sumarização automática (DistilBART / T5) |
+
 ### Backend
 | Tecnologia | Uso |
 |---|---|
-| Python | Linguagem principal |
+| Python 3.10+ | Linguagem principal |
 | Apache Kafka | Fila de mensagens entre producer e workers |
 | Elasticsearch | Indexação e busca de artigos |
-| HuggingFace Transformers | Modelos de NLP (NER, classificação, sumarização) |
 | GraphQL | API de consulta para o frontend |
 
 ### Frontend
 | Tecnologia | Uso |
 |---|---|
-| React | Interface do usuário |
+| React 18 | Interface do usuário |
 | Tailwind CSS | Estilização |
 | Vite | Build e dev server |
 | date-fns | Formatação de datas |
@@ -62,7 +69,7 @@ de busca inteligente com classificação de tópicos, entidades e sumarização 
 ### Infraestrutura
 | Tecnologia | Uso |
 |---|---|
-| Docker | Orquestração dos serviços |
+| Docker + Docker Compose | Orquestração dos serviços |
 
 ---
 
