@@ -1,6 +1,6 @@
 services:
 
-  # ── Kafka Stack ─────────────────────────────────────────────
+  # Kafka Stack
   zookeeper:
     image: confluentinc/cp-zookeeper:7.5.0
     container_name: news-zookeeper
@@ -34,7 +34,7 @@ services:
       interval: 15s
       timeout: 10s
       retries: 10
-      start_period: 30s  # ← evita o NodeExistsException no restart
+      start_period: 30s  
     networks:
       - news-net
 
@@ -51,14 +51,14 @@ services:
     networks:
       - news-net
 
-  # ── ElasticSearch Stack ──────────────────────────────────────
+  # ElasticSearch Stack
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:8.11.0
     container_name: news-elasticsearch
     environment:
       - discovery.type=single-node
       - xpack.security.enabled=false
-      - ES_JAVA_OPTS=-Xms256m -Xmx256m  # ← era 512m, economiza ~256MB
+      - ES_JAVA_OPTS=-Xms256m -Xmx256m  
     ports:
       - "9200:9200"
     volumes:
@@ -71,9 +71,7 @@ services:
     networks:
       - news-net
 
-  # kibana: removido → economiza ~300MB
-
-  # ── Aplicação ────────────────────────────────────────────────
+  # Aplicação 
   producer:
     build: ./producer
     container_name: news-producer
@@ -125,14 +123,14 @@ services:
     networks:
       - news-net
 
-# ── Volumes ───────────────────────────────────────────────────
+# Volumes
 volumes:
   zookeeper_data:
   kafka_data:
   elastic_data:
   huggingface_cache:
 
-# ── Networks ──────────────────────────────────────────────────
+# Networks
 networks:
   news-net:
     driver: bridge
