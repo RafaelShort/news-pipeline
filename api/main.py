@@ -36,5 +36,5 @@ async def health():
 
 
 if __name__ == "__main__":
-    logger.info("🚀 News API iniciada em http://localhost:8080/graphql")
+    logger.info("News API iniciada em http://localhost:8080/graphql")
     uvicorn.run("main:app", host="0.0.0.0", port=8080, reload=True)
