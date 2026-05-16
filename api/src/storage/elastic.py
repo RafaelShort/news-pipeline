@@ -30,7 +30,7 @@ class ElasticSearch:
         must = []
         filters = []
 
-        # ── Full-text search ──────────────────────────────────
+        # Full-text search
         if query:
             must.append({
                 "multi_match": {
@@ -40,7 +40,7 @@ class ElasticSearch:
                 }
             })
 
-        # ── Filtros exatos ────────────────────────────────────
+        # Filtros exatos
         if topic:
             filters.append({"term": {"topic_main": topic}})
         if category:
@@ -50,7 +50,7 @@ class ElasticSearch:
         if source_name:
             filters.append({"term": {"source_name": source_name}})
 
-        # ── Filtro por data ───────────────────────────────────
+        # Filtro por data
         if from_date or to_date:
             date_range: dict[str, Any] = {}
             if from_date:
@@ -69,7 +69,7 @@ class ElasticSearch:
             "sort": [{"published_at": {"order": "desc"}}],
             "from": (page - 1) * page_size,
             "size": page_size,
-            # ── Agregações para faceted search ────────────────
+            # Agregações para faceted search
             "aggs": {
                 "by_topic": {
                     "terms": {"field": "topic_main", "size": 10}
