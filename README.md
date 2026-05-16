@@ -31,9 +31,9 @@ de busca inteligente com classificação de tópicos, entidades e sumarização 
 - **Coleta automática** de feeds RSS em intervalo configurável
 - **Fila de mensagens** com Apache Kafka
 - **Enriquecimento com IA:**
-  - Reconhecimento de entidades nomeadas com **spaCy**
-  - Classificação de tópicos via **zero-shot** com HuggingFace Transformers
-  - Sumarização automática de artigos com **DistilBART / T5**
+  - Reconhecimento de entidades nomeadas com **spaCy** (`pt_core_news_lg`)
+  - Classificação de tópicos via **zero-shot** com `cross-encoder/nli-MiniLM2-L6-H768`
+  - Sumarização automática de artigos com **T5**
 - **Busca full-text** com Elasticsearch
 - **Filtros por facetas** (fonte, tópico, idioma, data)
 - **Interface web** moderna com React e Tailwind CSS
@@ -43,11 +43,11 @@ de busca inteligente com classificação de tópicos, entidades e sumarização 
 ## Tecnologias
 
 ### NLP / IA
-| Tecnologia | Uso |
-|---|---|
-| spaCy | Reconhecimento de entidades nomeadas (NER) |
-| HuggingFace Transformers | Classificação zero-shot de tópicos |
-| HuggingFace Transformers | Sumarização automática (DistilBART / T5) |
+| Tecnologia | Modelo | Uso |
+|---|---|---|
+| spaCy | `pt_core_news_lg` | Reconhecimento de entidades nomeadas (NER) em português |
+| HuggingFace Transformers | `cross-encoder/nli-MiniLM2-L6-H768` | Classificação zero-shot de tópicos |
+| HuggingFace Transformers | `t5-small` | Sumarização automática de artigos |
 
 ### Backend
 | Tecnologia | Uso |
