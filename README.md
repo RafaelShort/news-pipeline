@@ -1,7 +1,27 @@
+<div align="center">
+
 # 📰 News Pipeline
 
-Pipeline automatizado de coleta, processamento e busca de artigos de notícias,
-com IA (NER, classificação de tópicos e sumarização).
+**Pipeline automatizado de coleta e análise de notícias com IA**
+
+Coleta feeds RSS, processa com modelos de linguagem e entrega uma interface
+de busca inteligente com classificação de tópicos, entidades e sumarização automática.
+
+[Funcionalidades](#-funcionalidades) •
+[Tecnologias](#-tecnologias) •
+[Como rodar](#-como-rodar-localmente) •
+
+![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)
+![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white)
+![Kafka](https://img.shields.io/badge/Apache_Kafka-231F20?logo=apachekafka&logoColor=white)
+![Elasticsearch](https://img.shields.io/badge/Elasticsearch-005571?logo=elasticsearch&logoColor=white)
+![HuggingFace](https://img.shields.io/badge/HuggingFace-Transformers-FFD21E?logo=huggingface&logoColor=black)
+![GraphQL](https://img.shields.io/badge/GraphQL-E10098?logo=graphql&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind-3-06B6D4?logo=tailwindcss&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+
+</div>
 
 ---
 
