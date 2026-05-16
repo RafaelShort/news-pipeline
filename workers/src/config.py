@@ -12,7 +12,7 @@ class Settings(BaseSettings):
 
     nlp_model_ner: str = "pt_core_news_lg"
     nlp_model_classifier: str = "cross-encoder/nli-MiniLM2-L6-H768"
-    nlp_model_summarizer: str = "t5-small"  # ← ~242MB vs 1.2GB
+    nlp_model_summarizer: str = "t5-small"  
 
     class Config:
         env_file = ".env"
