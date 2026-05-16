@@ -7,7 +7,7 @@ from src.kafka.consumer import NewsConsumer
 from src.nlp.pipeline import NLPPipeline
 from src.storage.elastic import ElasticStorage
 
-# ── Logging ──────────────────────────────────────────────────
+# Logging
 logger.remove()
 logger.add(
     sys.stdout,
@@ -31,7 +31,7 @@ def main():
     signal.signal(signal.SIGINT, shutdown)
     signal.signal(signal.SIGTERM, shutdown)
 
-    logger.info("🚀 NLP Worker iniciado")
+    logger.info("NLP Worker iniciado")
 
     pipeline = NLPPipeline()
     storage = ElasticStorage()
