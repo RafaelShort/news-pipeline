@@ -31,8 +31,8 @@ de busca inteligente com classificação de tópicos, entidades e sumarização 
 - **Coleta automática** de feeds RSS em intervalo configurável
 - **Fila de mensagens** com Apache Kafka
 - **Enriquecimento com IA:**
-  - Reconhecimento de entidades nomeadas com **spaCy** (`pt_core_news_lg`)
-  - Classificação de tópicos via **zero-shot** com `cross-encoder/nli-MiniLM2-L6-H768`
+  - Reconhecimento de entidades nomeadas com **spaCy**
+  - Classificação de tópicos via **zero-shot**
   - Sumarização automática de artigos com **T5**
 - **Busca full-text** com Elasticsearch
 - **Filtros por facetas** (fonte, tópico, idioma, data)
