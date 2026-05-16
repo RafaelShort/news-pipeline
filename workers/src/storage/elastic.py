@@ -60,9 +60,9 @@ class ElasticStorage:
     def _ensure_index(self):
         if not self._es.indices.exists(index=self._index):
             self._es.indices.create(index=self._index, body=INDEX_MAPPING)
-            logger.info(f"📁 Índice criado: {self._index}")
+            logger.info(f"Índice criado: {self._index}")
         else:
-            logger.debug(f"📁 Índice já existe: {self._index}")
+            logger.debug(f"Índice já existe: {self._index}")
 
     def save(self, article: dict) -> bool:
         try:
@@ -71,7 +71,7 @@ class ElasticStorage:
                 id=article["id"],
                 document=article,
             )
-            logger.debug(f"💾 Salvo no ES: {article['title'][:60]}...")
+            logger.debug(f"Salvo no ES: {article['title'][:60]}...")
             return True
         except Exception as e:
             logger.error(f"❌ Erro ao salvar no ES: {e}")
