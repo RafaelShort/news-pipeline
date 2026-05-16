@@ -24,7 +24,7 @@ class NERExtractor:
     }
 
     def __init__(self, model_name: str):
-        logger.info(f"🧠 Carregando modelo NER: {model_name}")
+        logger.info(f"Carregando modelo NER: {model_name}")
         try:
             self._nlp = spacy.load(model_name)
             logger.info(f"✅ Modelo NER carregado: {model_name}")
@@ -55,5 +55,5 @@ class NERExtractor:
                 "label_pt": label_map.get(ent.label_, ent.label_),
             })
 
-        logger.debug(f"🔍 {len(entities)} entidades extraídas")
+        logger.debug(f"{len(entities)} entidades extraídas")
         return entities
