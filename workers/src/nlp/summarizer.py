@@ -6,7 +6,7 @@ class Summarizer:
     """Sumariza textos longos com modelo configurável (DistilBART ou T5)."""
 
     def __init__(self, model_name: str):
-        logger.info(f"🧠 Carregando sumarizador: {model_name}")
+        logger.info(f"Carregando sumarizador: {model_name}")
         self._model_name = model_name
         self._is_t5 = "t5" in model_name.lower()
         self._summarizer = pipeline(
@@ -28,10 +28,10 @@ class Summarizer:
                 max_length=max_length,
                 min_length=min_length,
                 do_sample=False,
-                truncation=True,   # ← garante truncamento automático
+                truncation=True,  
             )
             summary = result[0]["summary_text"]
-            logger.debug(f"📝 Resumo gerado: {len(summary)} chars")
+            logger.debug(f"Resumo gerado: {len(summary)} chars")
             return summary
 
         except Exception as e:
