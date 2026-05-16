@@ -21,7 +21,7 @@ class TopicClassifier:
     """Classifica o tópico principal do artigo via zero-shot."""
 
     def __init__(self, model_name: str):
-        logger.info(f"🧠 Carregando classificador: {model_name}")
+        logger.info(f"Carregando classificador: {model_name}")
         self._classifier = pipeline(
             "zero-shot-classification",
             model=model_name,
@@ -48,7 +48,7 @@ class TopicClassifier:
                 )
             ]
 
-            logger.debug(f"🏷️ Tópico principal: {topics[0]['topic']} ({topics[0]['score']})")
+            logger.debug(f"Tópico principal: {topics[0]['topic']} ({topics[0]['score']})")
             return topics
 
         except Exception as e:
