@@ -15,7 +15,7 @@ class NewsConsumer:
             group_id=settings.kafka_group_id,
             value_deserializer=lambda v: json.loads(v.decode("utf-8")),
             auto_offset_reset="earliest",
-            enable_auto_commit=False,   # commit manual após processamento
+            enable_auto_commit=False,   
             max_poll_records=10,
         )
         logger.info(
@@ -26,7 +26,7 @@ class NewsConsumer:
 
     def consume(self):
         """Gera mensagens do Kafka indefinidamente."""
-        logger.info("👂 Aguardando mensagens...")
+        logger.info("Aguardando mensagens...")
         try:
             for message in self._consumer:
                 yield message.value
@@ -37,4 +37,4 @@ class NewsConsumer:
 
     def close(self):
         self._consumer.close()
-        logger.info("🔌 KafkaConsumer encerrado")
+        logger.info("KafkaConsumer encerrado")
