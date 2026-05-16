@@ -8,7 +8,7 @@ from strawberry.fastapi import GraphQLRouter
 
 from src.schema.queries import Query
 
-# ── Logging ──────────────────────────────────────────────────
+# Logging
 logger.remove()
 logger.add(
     sys.stdout,
@@ -16,11 +16,11 @@ logger.add(
     level="DEBUG",
 )
 
-# ── GraphQL Schema ────────────────────────────────────────────
+# GraphQL Schema
 schema = strawberry.Schema(query=Query)
 graphql_router = GraphQLRouter(schema, graphiql=True)
 
-# ── FastAPI App ───────────────────────────────────────────────
+# FastAPI App
 app = FastAPI(
     title="News Pipeline API",
     description="GraphQL API para busca de artigos processados",
