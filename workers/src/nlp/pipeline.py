@@ -34,14 +34,14 @@ class NLPPipeline:
     """Orquestra todos os modelos NLP."""
 
     def __init__(self):
-        logger.info("⚙️ Inicializando NLP Pipeline...")
+        logger.info("Inicializando NLP Pipeline...")
         self._ner = NERExtractor(settings.nlp_model_ner)
         self._classifier = TopicClassifier(settings.nlp_model_classifier)
         self._summarizer = Summarizer(settings.nlp_model_summarizer)
         logger.info("✅ NLP Pipeline pronto")
 
     def process(self, raw: dict) -> ProcessedArticle:
-        logger.info(f"⚙️ Processando: {raw['title'][:60]}...")
+        logger.info(f"Processando: {raw['title'][:60]}...")
 
         text = raw.get("content") or raw.get("summary", "")
         language = raw.get("language", "pt")
