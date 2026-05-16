@@ -10,7 +10,7 @@ from src.feeds.rss_reader import fetch_feed
 from src.feeds.sources import RSS_SOURCES
 from src.kafka.producer import NewsProducer
 
-# ── Logging ──────────────────────────────────────────────────
+# Logging
 logger.remove()
 logger.add(
     sys.stdout,
@@ -23,7 +23,7 @@ producer: NewsProducer | None = None
 
 def fetch_and_publish():
     """Lê todos os feeds RSS e publica no Kafka."""
-    logger.info("🔄 Iniciando ciclo de coleta de feeds...")
+    logger.info("Iniciando ciclo de coleta de feeds...")
     total_published = 0
     total_errors = 0
 
@@ -56,7 +56,7 @@ def main():
     signal.signal(signal.SIGINT, shutdown)
     signal.signal(signal.SIGTERM, shutdown)
 
-    logger.info("🚀 News Producer iniciado")
+    logger.info("News Producer iniciado")
     producer = NewsProducer()
 
     # Primeira execução imediata
