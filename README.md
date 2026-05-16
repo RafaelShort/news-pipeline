@@ -7,9 +7,9 @@
 Coleta feeds RSS, processa com modelos de linguagem e entrega uma interface
 de busca inteligente com classificação de tópicos, entidades e sumarização automática.
 
-[Funcionalidades](#-funcionalidades) •
-[Tecnologias](#-tecnologias) •
-[Como rodar](#-como-rodar-localmente) •
+[Funcionalidades](#funcionalidades) •
+[Tecnologias](#tecnologias) •
+[Como rodar](#como-rodar-localmente) •
 
 ![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)
 ![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white)
