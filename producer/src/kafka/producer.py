@@ -14,7 +14,7 @@ class NewsProducer:
             bootstrap_servers=settings.kafka_bootstrap_servers,
             value_serializer=lambda v: json.dumps(v).encode("utf-8"),
             key_serializer=lambda k: k.encode("utf-8"),
-            acks="all",                  # aguarda confirmação de todos os brokers
+            acks="all",                  
             retries=3,
             max_block_ms=10_000,
         )
@@ -32,7 +32,7 @@ class NewsProducer:
                 value=article.model_dump(),
             )
             future.get(timeout=5)
-            logger.debug(f"📤 Publicado: {article.title[:60]}...")
+            logger.debug(f"Publicado: {article.title[:60]}...")
             return True
 
         except KafkaError as e:
@@ -44,4 +44,4 @@ class NewsProducer:
 
     def close(self):
         self._producer.close()
-        logger.info("🔌 KafkaProducer encerrado")
+        logger.info("KafkaProducer encerrado")
